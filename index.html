@@ -3,64 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY GALLERY</title>
+    <title>Photography Gallery</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #333;
-            color: white;
             margin: 0;
             padding: 0;
+            background-color: #f0f8ff; /* Soft light background color */
+            color: #333;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
+            text-align: center;
         }
         h1 {
+            font-size: 2.5em;
             margin-top: 20px;
-            font-size: 36px;
+            color: #333;
         }
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
         }
-        .gallery img {
-            width: 300px;
-            height: 200px;
-            object-fit: cover;
-            border: 5px solid white;
-            border-radius: 10px;
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
-        .gallery img:hover {
-            transform: scale(1.1);
+        .gallery-item img:hover {
+            transform: scale(1.05);
         }
-        audio {
-            display: none;
+        .gallery-item .text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .gallery-item .text {
+                font-size: 1em;
+                padding: 5px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>ANYYEONHASEO</h1>
+    <h1>Photography Gallery</h1>
     <div class="gallery">
-        <img src="" alt="Photo 1">
-        <img src="page2.JPG" alt="Photo 2">
-        <img src="WEB GALLERY HTML/Page1.jpg" alt="Photo 3">
-        <img src="photo4.jpg" alt="Photo 4">
-        <img src="photo5.jpg" alt="Photo 5">
-        <img src="photo6.jpg" alt="Photo 6">
+        <div class="gallery-item">
+            <img src="WEB GALLERY HTML/Page1.jpg" alt="Photo 1">
+            <div class="text">Beautiful Landscape</div>
+        </div>
+        <div class="gallery-item">
+            <img src="WEB GALLERY HTML/page2.JPG" alt="Photo 2">
+            <div class="text">Sunset Over the Mountains</div>
+        </div>
+        <div class="gallery-item">
+            <img src="photo3.jpg" alt="Photo 3">
+            <div class="text">Serene Lake View</div>
+        </div>
+        <div class="gallery-item">
+            <img src="photo4.jpg" alt="Photo 4">
+            <div class="text">City Lights at Night</div>
+        </div>
+        <div class="gallery-item">
+            <img src="photo5.jpg" alt="Photo 5">
+            <div class="text">Waves Crashing on the Shore</div>
+        </div>
     </div>
 
     <audio autoplay loop>
-        <source src="background-music.mp3" type="audio/mpeg">
+        <source src="https://github.com/username/repository/raw/main/background-music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
 </body>
 </html>
-
